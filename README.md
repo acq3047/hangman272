@@ -14,7 +14,11 @@
     - [Task 2](#task-2-check-wether-the-guess-is-in-the-word)
     - [Task 3](#task-3-create-functions-to-run-the-check)
     - [Task 4](#task-4-update-the-latest-code-changes-to-github)
-
+5. [Milestone 4](#milestone-4-create-the-class)
+    - [Task 1](#task-1-create-the-class)
+    - [Task 2](#task-2-create-the-methods-for-running-the-checks)
+    - [Task 3](#task-3-define-what-happens-if-the-letter-is-in-the-word)
+    - [Task 4](#task-4-define-what-happens-if-the-letter-is-not-in-the-word)
 ## Description
 
 Hangman is a classic game in which a player thinks of a word and the other player tries to guess that word within a certain amount of attempts.
@@ -241,3 +245,234 @@ Update your GitHub repository with the latest code changes from your local proje
 
 1. Staging your modifications and creating a commit.
 2. Push the changes to your GitHMub repository
+
+## Milestone 4: Create the class
+
+In this milestone, we proceed proceed to use the Object Oriented Programming (OOP) paradigm to develop to complete a Hangman game.
+
+### Task 1: Create the class
+
+In this task, we proceed to create another python file callled **milestone_4.py** in which we proceed to create a class called **Hangman** to contain the required proccesss to create a complete Hangman game.
+
+1. Create a class called **Hangman**
+2. Create the contruction method (__init__) to initialise the attributes of the class which are **word_list** and **num_lives**
+3. Initialise the attributes:
+    - **word**: The word to be guessed, picked randomly from the word_list.
+    - **word_guessed**: list - A list of the letters of the word, with _ for each letter not yet guessed.
+    - **num_letters**: int - The number of unique letters in the word that have not been guessed yet
+    - **num_lives**: int - The number of lives the player has at the start of the game which in this case, we specified as 5
+    - **word_list**: list - A list of words
+    - **list_of_guesses**: list - A list of the guesses that have already been tried. Set this to an empty list initially
+
+```python
+import random
+
+class Hangman:
+    def __init__(self, word_list, num_lives=5):
+        self.word_list = word_list
+        self.num_lives = num_lives
+        self.word = random.choice(word_list)
+        self.word_guessed = ['_' for _ in self.word]
+        self.num_letters = len(set(self.word))
+        self.list_of_guesses = []
+```
+
+### Task 2: Create the methods for running the checks
+
+In this task, we willproceed to create a method that will ask the user to guess a letter and another method that will check if the guess is in the word.
+
+1. Define a method called **check_guess** which has *guess* as parameter.
+    - Convert the guessed letter to lower case.
+    - Create an if statement that checks if the guess is in the word.
+    - In the body of the if statement, print a message saying "Good guess! {guess} is in the word.".
+2. Define a method called **ask_for_input**. 
+    - Create a while loop and set the condition to True.
+    - Ask the user to guess a letter and assign this to a variable called *guess*.
+    - Create an if statement that runs if the guess is not a single alphabetical character.
+    - In the body of the if statement, print a message saying "Invalid letter. Please, enter a single alphabetical character.".
+    - Create an elif statement that checks if the guess is already in the **list_of_guesses**.
+    - In the body of the elif statement, print a message saying "You already tried that letter!"
+    - If the guess is a single alphabetical character  is not in **list_of_guesses**, create an else block and call the               **check_guess** method. 
+    - Append the *guess* to the **list_of_guesses**.
+
+```python
+import random
+
+class Hangman:
+    def __init__(self, word_list, num_lives=5):
+        self.word_list = word_list
+        self.num_lives = num_lives
+        self.word = random.choice(word_list)
+        self.word_guessed = ['_' for _ in self.word]
+        self.num_letters = len(set(self.word))
+        self.list_of_guesses = []
+
+    def check_guess(self, guess):
+        guess = guess.lower()
+        if guess in self.word:
+            print(f"Good guess! {guess} is in the word.")
+
+    def ask_for_input(self):
+        while True:
+            guess = input("Guess a letter: ").lower()
+            if len(guess) != 1 or not guess.isalpha():
+                print("Invalid letter. Please, enter a single alphabetical character.")
+            elif guess in self.list_of_guesses:
+                print("You already tried that letter!")
+            else:
+                self.check_guess(guess)
+                self.list_of_guesses.append(guess)
+                break
+
+# Testing the code
+hangman_game = Hangman(["apple", "banana", "orange"])
+hangman_game.ask_for_input()
+```
+
+### Task 3: Define what happens if the letter is in the word
+
+In this task, we proceed to extend the **check_guess** method to replace the underscore(s) in the **word_guessed** with the letter guessed by the user.
+
+1. After the print statement, Create a for-loop that will loop through each letter in the **word**.
+2. Within the for-loop, do the following:
+    - Create an if statement that checks if the letter is equal to the guess
+    - In the if block, replace the corresponding "_" in the **word_guessed** with the guess.
+3. Outside the for-loop, reduce the variable **num_letters** by 1
+
+```python
+import random
+
+class Hangman:
+    def __init__(self, word_list, num_lives=5):
+        self.word_list = word_list
+        self.num_lives = num_lives
+        self.word = random.choice(word_list)
+        self.word_guessed = ['_' for _ in self.word]
+        self.num_letters = len(set(self.word))
+        self.list_of_guesses = []
+
+    def check_guess(self, guess):
+        guess = guess.lower()
+        if guess in self.word:
+            print(f"Good guess! {guess} is in the word.")
+            for i, letter in enumerate(self.word):
+                if letter == guess:
+                    self.word_guessed[i] = guess
+            self.num_letters -= 1
+
+    def ask_for_input(self):
+        while True:
+            guess = input("Guess a letter: ").lower()
+            if len(guess) != 1 or not guess.isalpha():
+                print("Invalid letter. Please, enter a single alphabetical character.")
+            elif guess in self.list_of_guesses:
+                print("You already tried that letter!")
+            else:
+                self.check_guess(guess)
+                self.list_of_guesses.append(guess)
+                break
+
+# Testing the code
+hangman_game = Hangman(["apple", "banana", "orange"])
+hangman_game.ask_for_input()
+print("Word guessed so far:", hangman_game.word_guessed)
+import random
+
+class Hangman:
+    def __init__(self, word_list, num_lives=5):
+        self.word_list = word_list
+        self.num_lives = num_lives
+        self.word = random.choice(word_list)
+        self.word_guessed = ['_' for _ in self.word]
+        self.num_letters = len(set(self.word))
+        self.list_of_guesses = []
+
+    def check_guess(self, guess):
+        guess = guess.lower()
+        if guess in self.word:
+            print(f"Good guess! {guess} is in the word.")
+            for i, letter in enumerate(self.word):
+                if letter == guess:
+                    self.word_guessed[i] = guess
+            self.num_letters -= 1
+
+    def ask_for_input(self):
+        while True:
+            guess = input("Guess a letter: ").lower()
+            if len(guess) != 1 or not guess.isalpha():
+                print("Invalid letter. Please, enter a single alphabetical character.")
+            elif guess in self.list_of_guesses:
+                print("You already tried that letter!")
+            else:
+                self.check_guess(guess)
+                self.list_of_guesses.append(guess)
+                break
+
+# Testing the code
+hangman_game = Hangman(["apple", "banana", "orange"])
+hangman_game.ask_for_input()
+print("Word guessed so far:", hangman_game.word_guessed)
+```
+
+### Task 4: Define what happens if the letter is not in the word
+
+In this task, we proceed to define what happens if the guess is not in the word you are trying to guess.
+
+1. In the **check_guess method**, Create an else statement.
+2. Within the else block:
+    - Reduce **num_lives** by 1.
+    - Print a message saying "Sorry, {letter} is not in the word.".
+    - Print another message saying "You have {self.num_lives} lives left."
+
+```python
+import random
+
+class Hangman:
+    def __init__(self, word_list, num_lives=5):
+        self.word_list = word_list
+        self.num_lives = num_lives
+        self.word = random.choice(word_list)
+        self.word_guessed = ['_' for _ in self.word]
+        self.num_letters = len(set(self.word))
+        self.list_of_guesses = []
+
+    def check_guess(self, guess):
+        guess = guess.lower()
+        if guess in self.word:
+            print(f"Good guess! {guess} is in the word.")
+            for i, letter in enumerate(self.word):
+                if letter == guess:
+                    self.word_guessed[i] = guess
+            self.num_letters -= 1
+        else:
+            self.num_lives -= 1 # Deduction of one attemp in the num_lives attribute
+            print(f'Sorry, {guess} is not in the word.')
+            print(f'You have {self.num_lives} lives left.')
+
+    def ask_for_input(self):
+        while True:
+            guess = input("Guess a letter: ").lower()
+            if len(guess) != 1 or not guess.isalpha():
+                print("Invalid letter. Please, enter a single alphabetical character.")
+            elif guess in self.list_of_guesses:
+                print("You already tried that letter!")
+            else:
+                self.check_guess(guess)
+                self.list_of_guesses.append(guess)
+                break
+
+# Testing the code
+hangman_game = Hangman(["apple", "banana", "orange"])
+hangman_game.ask_for_input()
+print("Word guessed so far:", hangman_game.word_guessed)
+```
+
+### Task 5:  Update the latest code changes to GitHub
+
+Update your GitHub repository with the latest code changes from your local project.
+
+1. Staging your modifications and creating a commit.
+2. Push the changes to your GitHMub repository
+
+
+
