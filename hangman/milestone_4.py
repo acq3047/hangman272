@@ -39,11 +39,12 @@ class Hangman:
             for i, letter in enumerate(self.word): # For loop to iterate the letter position in the word selected by the computer.
                 if letter == guess:
                     self.word_guessed[i] = guess
+            self.num_letters -= 1
         else:
             self.num_lives -= 1 # Deduction of one attemp in the num_lives attribute
             print(f'Sorry, {guess} is not in the word.')
             print(f'You have {self.num_lives} lives left.')
-        self.num_letters -= 1
+
     
     def ask_for_input(self):
         '''
