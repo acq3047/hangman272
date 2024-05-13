@@ -41,7 +41,7 @@ class Hangman:
                     self.word_guessed[i] = guess
         else:
             self.num_lives -= 1 # Deduction of one attemp in the num_lives attribute
-            print(f'Sorry, {guess} is not in the word.')
+            print(f'Sorry, {letter} is not in the word.')
             print(f'You have {self.num_lives} lives left.')
         self.num_letters -= 1
     
