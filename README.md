@@ -19,6 +19,9 @@
     - [Task 2](#task-2-create-the-methods-for-running-the-checks)
     - [Task 3](#task-3-define-what-happens-if-the-letter-is-in-the-word)
     - [Task 4](#task-4-define-what-happens-if-the-letter-is-not-in-the-word)
+6. [Milestone 5](#milestone-5-putting-all-together)
+    -[Task 1](#task-1-code-the-logic-of-the-game)
+    -[Task2](#task-2-update-the-latest-code-changes-to-github)
 ## Description
 
 Hangman is a classic game in which a player thinks of a word and the other player tries to guess that word within a certain amount of attempts.
@@ -468,6 +471,140 @@ print("Word guessed so far:", hangman_game.word_guessed)
 ```
 
 ### Task 5:  Update the latest code changes to GitHub
+
+Update your GitHub repository with the latest code changes from your local project.
+
+1. Staging your modifications and creating a commit.
+2. Push the changes to your GitHMub repository
+
+## Milestone 5: Putting all together
+
+In this milestone, we proceed to introduce make the final adjustments of the code to make it work as expected by the introduction of the logic conditions that will specify the conditons that are required to make the code work.
+
+### Task 1: Code the logic of the game
+
+In this task, we proceed to create a script capable to execute the Hangman game as expected. To do it, we decided to create another file called **milestone_5py** 
+in whcih we copy the **Hangman** class created in the **milestone_4.py** file and we proceed to create an additional function that will make the game works as usual.
+
+1. Create a function called **play_game** that takes *word_list* as a parameter.
+2. Specify the **num_lives** as 5.
+3. Create a variable called **game** that will called an instance of the **Hangman** class which has **word_list** and **num_lives** as arguments.
+4. Create a while loop and set the condition to True. In the body of the loop, do the following:
+    - Check if the **num_lives** is 0. If it is, that means the game has ended and the user lost. Print a message saying 'You lost!'
+    - Next, check if the **num_letters** is greater than 0. In this case, you would want to continue the game, so you need to call the ask_for_input method.
+    - If the **num_lives** is not 0 and the **num_letters** is not greater than 0 Print a message saying 'Congratulations. You won the game!'
+5. In the **Hangman** class modify the **ask_for_input** method to make it work when the **num_lives** and **num_letters** are greather than 0.
+6. Outside the function, call your **play_game** function to play your game which has a list of words as argument to the function
+
+```Python
+import random
+
+# Create a class called Hangman
+
+class Hangman:
+    '''
+    This class is used to create an interpretation code of the Hangman game.
+
+    Attributes:
+        word_list (list of strings): The list of words that the computer can choose for the game.
+        num_lives (int): The number of attemps that are available for guessing the word.
+        word (string): The word randomly chosen by the computer.
+        word_guessed (list of strings): List in which the letters of the word to guess is introduced in the same index as in the word.
+        num_letters (int): The number of letters that form the word chosen by the computer.
+        list_of_guesses (list of strings): List that contains all the letters guessed by the user.
+    '''
+    def __init__(self, word_list, num_lives=5):
+        self.word_list = word_list
+        self.num_lives = num_lives
+        self.word = random.choice(self.word_list)
+        self.word_guessed = ['_' for _ in self.word]
+        self.num_letters = len(set(self.word))
+        self.list_of_guesses = []
+
+    def check_guess(self, guess):
+        '''
+        This method is used to check if the letter provided by the user is in the word chosen by the computer.
+
+        In the case the guess is in the word the letter is introduce in the word_guessed list in the same position
+        as the position that appear in the word.
+
+        However, in the case the letter is not in the word, we dedeucted one attempt of the num_lives.
+        '''
+        guess = guess.lower() # Convert the user guess to lower case.
+        if guess in self.word:
+            print(f'Good guess! {guess} is in the word.')
+            for i, letter in enumerate(self.word): # For loop to iterate the letter position in the word selected by the computer.
+                if letter == guess:
+                    self.word_guessed[i] = guess
+                    print(self.word_guessed)
+            self.num_letters -= 1
+            print('Number of letters left:')
+            print(self.num_letters)
+        else:
+            self.num_lives -= 1 # Deduction of one attemp in the num_lives attribute
+            print(f'Sorry, {guess} is not in the word.')
+            print(f'You have {self.num_lives} lives left.')
+
+    
+    def ask_for_input(self):
+        '''
+        This method is used to ask the user to introduce a letter along with the checking if the guess of the user is an
+        alphabetical character and if the user has not introduce more than one character.
+
+        In the case the letter has passed the check, we introduced into the list_of_guesses in which we store all the letters that the
+        user has guessed in which there is no repetitive letters.
+
+        Finally, if the letter is not in the list_of_guesses, we pass the guess to the check_guess method.
+        '''
+        while self.num_lives > 0  and self.num_letters > 0:
+            guess = input('Introduce a letter: ')
+            if len(guess) !=1 or not guess.isalpha():
+                print('Invalid letter. Please, enter a single alphabetical character.')
+            elif guess in self.list_of_guesses:
+                print('You already tried that letter!')
+            else:
+                self.check_guess(guess)
+                self.list_of_guesses.append(guess)
+                print('Letters used:')
+                print(self.list_of_guesses) # Show in the display the list that contains the words already used
+                
+
+
+# Testing the code
+
+# Create ply_game method
+
+def play_game(word_list):
+    '''
+    This function is used to run all the code to execute the game as expected.
+
+    The purpose of this function is based on the execution of the Hangman game.
+    To do it we decided to call the class Hangman into the function having 
+    word_list and mum_lives with the objective to iteratively guess
+    the word selectec by the computer before the num_lives becomes 0
+    '''
+    num_lives = 5
+    game = Hangman(word_list, num_lives)
+    while True:
+        if game.num_lives == 0:
+            print('You lost!')
+            break
+
+        if game.num_letters > 0: # This statement works when the number of letters to guess are greather than 0
+            game.ask_for_input()
+        else: 
+            print('Congratulations. You won the game!')
+            break
+    
+            
+# Testing the code
+
+if __name__ == '__main__':  # Execute the code by calling play_game function only when we run this file directly
+    word_list = ['apple', 'banana', 'orange', 'pear', 'strawberry', 'watermelon', 'pinapple', 'peach', 'melon']
+    play_game(word_list)
+```
+
+### Task 2: Update the latest code changes to GitHub
 
 Update your GitHub repository with the latest code changes from your local project.
 
