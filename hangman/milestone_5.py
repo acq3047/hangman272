@@ -102,5 +102,6 @@ def play_game(word_list):
             
 # Testing the code
 
-play_list=["apple", "banana", "orange"]
-play_game(play_list)
+if __name__ == '__main__':
+    word_list = ['apple', 'banana', 'orange', 'pear', 'strawberry', 'watermelon']
+    play_game(word_list)
