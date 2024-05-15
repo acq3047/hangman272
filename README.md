@@ -42,6 +42,8 @@ This section correspond to the first part of the project which consits on the cr
 
 At the time of creating the repository, we decided to follow the following proccedure:
 
+![All Text](https://github.com/acq3047/hangman272/blob/main/Set_up_the_environment.gif)
+
 - Click on “Install Github App “ button on right panel on the Hangman project module of the AI Core portal. A new Github page will appear.
 - Select the account on which you want to use for your AiCore projects
 - On the next page, select the “All repositories“ checkbox.
