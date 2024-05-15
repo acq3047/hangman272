@@ -1,6 +1,6 @@
 # Hangman
 
-![All text](C:/Users/acq30/OneDrive/Documents/AI Core VsCode/hangman272/hangman_image.jpeg)
+![All text](https://github.com/acq3047/hangman272/blob/main/hangman_image.jpeg)
 
 # Table of contents
 1. [Description](#description)
