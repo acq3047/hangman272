@@ -4,31 +4,37 @@
 
 # Table of contents
 1. [Description](#description)
-2. [Milestone 1](#milestone-1-set-up-the-environemnt)
-3. [Milestone 2](#milestone-2-create-the-variables-for-the-game)
-    - [Task 1](#task-1-define-the-list-of-possible-words)
-    - [Task 2](#task-2-choose-a-random-word-from-the-list)
-    - [Task 3](#task-3-ask-the-user-for-an-input)
-    - [Task 4](#task-4-check-out-that-the-input-is-a-single-character)
-    - [Task 5](#task-5-update-the-latest-code-changes-to-github)
-4. [Milestone 3](#milestone-3-check-if-the-guessed-character-is-in-the-word)
-    - [Task 1](#task-1-iteratively-chech-if-the-input-is-a-valid-guess)
-    - [Task 2](#task-2-check-wether-the-guess-is-in-the-word)
-    - [Task 3](#task-3-create-functions-to-run-the-check)
-    - [Task 4](#task-4-update-the-latest-code-changes-to-github)
-5. [Milestone 4](#milestone-4-create-the-class)
-    - [Task 1](#task-1-create-the-class)
-    - [Task 2](#task-2-create-the-methods-for-running-the-checks)
-    - [Task 3](#task-3-define-what-happens-if-the-letter-is-in-the-word)
-    - [Task 4](#task-4-define-what-happens-if-the-letter-is-not-in-the-word)
-6. [Milestone 5](#milestone-5-putting-all-together)
-    - [Task 1](#task-1-code-the-logic-of-the-game)
-    - [Task2](#task-2-update-the-latest-code-changes-to-github)
+2. [Milestone 1: Set up the environment](#milestone-1-set-up-the-environemnt)
+3. [Milestone 2: Create the variables for the game](#milestone-2-create-the-variables-for-the-game)
+    - [Task 1: Define the list of possible words](#task-1-define-the-list-of-possible-words)
+    - [Task 2: Choose a random word from the list](#task-2-choose-a-random-word-from-the-list)
+    - [Task 3: Ask the user for an input](#task-3-ask-the-user-for-an-input)
+    - [Task 4: Check out that the input is a single character](#task-4-check-out-that-the-input-is-a-single-character)
+    - [Task 5: Upadate the latest code changes to GitHub](#task-5-update-the-latest-code-changes-to-github)
+4. [Milestone 3: Check if the guessed character id in the word](#milestone-3-check-if-the-guessed-character-is-in-the-word)
+    - [Task 1: Iteratively check if the input is a valid guess](#task-1-iteratively-chech-if-the-input-is-a-valid-guess)
+    - [Task 2: Check wether the guess is in the word](#task-2-check-wether-the-guess-is-in-the-word)
+    - [Task 3: Create functions to run the check](#task-3-create-functions-to-run-the-check)
+    - [Task 4: Update the latest code changes to GitHub](#task-4-update-the-latest-code-changes-to-github)
+5. [Milestone 4: Create the game class](#milestone-4-create-the-class)
+    - [Task 1: Create the class](#task-1-create-the-class)
+    - [Task 2: Create the methods for running the checks](#task-2-create-the-methods-for-running-the-checks)
+    - [Task 3: Define what happens if the letter is in the word](#task-3-define-what-happens-if-the-letter-is-in-the-word)
+    - [Task 4: Define what happens if the letter is not in the word](#task-4-define-what-happens-if-the-letter-is-not-in-the-word)
+    - [Task 5: Update the latest code changes to GitHub](#task-5--update-the-latest-code-changes-to-github)
+6. [Milestone 5: Putting all together](#milestone-5-putting-all-together)
+    - [Task 1: Code the logic of the game](#task-1-code-the-logic-of-the-game)
+    - [Task2: Update the latest code changes to GitHub](#task-2-update-the-latest-code-changes-to-github)
+7. [License](#license)
+
+
 ## Description
 
-Hangman is a classic game in which a player thinks of a word and the other player tries to guess that word within a certain amount of attempts.
+The hangman game, a traditional word-guessing activity, is not just a game. It's a captivating intellectual exercise that challenges participants' vocabulary and deductive skills. This uncomplicated yet stimulating game provides a platform for students to engage their minds, making it a valuable and intellectually stimulating exercise.
 
-The aim of this project is to create a simple interactive game using Python where players can have fun guessing words while practicing their vocabulary and logical deduction skills. This project also serves as a learning opportunity to understand fundamental concepts of programming such as data types, control flow, loops, functions, and user input handling.
+The primary aim of this project is to develop a sophisticated programming code that enables the user to iteratively guess the word randomly chosen by the computer until the allotted attempts are exhausted. This endeavour involves the creation of four distinct files to progressively construct the code, with an incremental level of complexity from a simple *if-else* statement to the implementation of a *class* incorporating the necessary logic and processing for optimal game performance.
+
+Furthermore, this project is not just about the hangman game. It's an invaluable learning opportunity for participants to delve deeper into fundamental programming concepts such as data types, control flow, loops, functions, and user input handling. These concepts, which have been covered in preceding course modules, are crucial for their programming journey, emphasizing the value and relevance of this project.
 
 ## Milestone 1: Set up the environemnt
 
@@ -251,7 +257,7 @@ Update your GitHub repository with the latest code changes from your local proje
 1. Staging your modifications and creating a commit.
 2. Push the changes to your GitHMub repository
 
-## Milestone 4: Create the class
+## Milestone 4: Create the game class
 
 In this milestone, we proceed proceed to use the Object Oriented Programming (OOP) paradigm to develop to complete a Hangman game.
 
@@ -472,7 +478,7 @@ hangman_game.ask_for_input()
 print("Word guessed so far:", hangman_game.word_guessed)
 ```
 
-### Task 5:  Update the latest code changes to GitHub
+### Task 5:  Update the latest code changes to GitHub 
 
 Update your GitHub repository with the latest code changes from your local project.
 
@@ -613,5 +619,7 @@ Update your GitHub repository with the latest code changes from your local proje
 1. Staging your modifications and creating a commit.
 2. Push the changes to your GitHMub repository
 
+## License
 
+When this project's repository was initially established, it was deliberately left unlicensed. This decision allows users to utilize, adapt, and distribute the code without encountering any constraints or limitations.
 
