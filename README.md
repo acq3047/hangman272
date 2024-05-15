@@ -22,8 +22,8 @@
     - [Task 3](#task-3-define-what-happens-if-the-letter-is-in-the-word)
     - [Task 4](#task-4-define-what-happens-if-the-letter-is-not-in-the-word)
 6. [Milestone 5](#milestone-5-putting-all-together)
-    -[Task 1](#task-1-code-the-logic-of-the-game)
-    -[Task2](#task-2-update-the-latest-code-changes-to-github)
+    - [Task 1](#task-1-code-the-logic-of-the-game)
+    - [Task2](#task-2-update-the-latest-code-changes-to-github)
 ## Description
 
 Hangman is a classic game in which a player thinks of a word and the other player tries to guess that word within a certain amount of attempts.
