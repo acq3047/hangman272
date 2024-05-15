@@ -52,12 +52,15 @@ At the time of creating the repository, we decided to follow the following procc
 
 ## Milestone 2: Create the variables for the game
 
-This section requires basic knowledge of python commands, such as if-else statements.
+This particular section requires a foundational understanding of Python commands. The goal is to develop a code that allows the computer to randomly select a word from a predefined list for user input. The user will then be prompted to input a single letter as a guess for the word chosen by the computer. Furthermore, the code should incorporate if-else statements to validate whether the user's input is in alphabetical order and consists of a single character. These checks are essential for ensuring the accuracy and reliability of the user's input.
 
 ### Task 1: Define the list of possible words
 
-Create a file named **milestone_2.py**. This file will contain the code for the first milestone. In this task, we are going to create a list of words.
+The task at hand entails defining a word list from which the computer will randomly select. To accomplish this, a file named **milestone_2.py** has been created to contain the code for the initial milestone. The objective is to compile a list of words.
 
+To achieve this, a variable named **word_list** has been established, housing a collection of preferred fruits. Subsequently, the contents of the **word_list** variable have been displayed in the terminal.
+
+***Breakdown list:***
 1. Create a list containing the names of your 5 favorite fruits.
 2. Assign this list to a variable called word_list.
 3. Print out the newly created list to the standard output (screen).
@@ -72,8 +75,9 @@ print(word_list)
 
 ### Task 2: Choose a random word from the list
 
-This task of of the section consists on importing the random moduele, which is one of the Python's built-in modules, to select randomly one of the fruits that are in the list.
+The task in this section involves importing the random module, which is one of Python's built-in modules. The objective is to use the random module to select a fruit randomly from a **word_list**.
 
+***Breakdown list:***
 1. Import the random module
 2. Create the random.choice method and pass the word_list variable into the choice method.
 3. Assign the randomly generated word to a variable called word.
@@ -96,8 +100,9 @@ print(choice)
 
 ### Task 3: Ask the user for an input
 
-In this task, you are required to take user input. The input() function that takes input from the screen. Note that the input function returns the user input in form of a string.
+Our next step in this task involves improving the code by incorporating the **input()** function. This function will allow the user to enter a specific letter, which will be treated as a string within the code.
 
+***Breakdown list:***
 1. Using the input function, ask the user to enter a single letter.
 2. Assign the input to a variable called guess.
 
@@ -122,9 +127,9 @@ guess = input('Enter a single letter: ')
 
 ### Task 4: Check out that the input is a single character
 
-In this section, we want to ensure  that only a single letter is entered and that only alphabetical characters are provided by the user.
-To do this, create conditional checks that must be passed before the input can be accepted.
+In this section, it is essential to ensure that the user input consists of only a letter containing only alphabetical characters. To achieve this, we have implemented an if-else statement to validate the input provided by the user. This validation process helps us determine whether the user has entered the input correctly or not.
 
+***Breakdown list:***
 1. Create an if statement that checks if the length of the input is equal to 1 and the input is alphabetical.
 2. In the body of the if statement, print a message that says "Good guess!".
 3. Create an else block that prints "Oops! That is not a valid input." if the preceding conditions are not met.
@@ -156,19 +161,22 @@ else:
 ```
 
 ### Task 5: Update the latest code changes to GitHub
-Update your GitHub repository with the latest code changes from your local project.
 
+To keep your GitHub repository up to date with the most recent code changes from your local project, make sure to push the latest changes from your local repository to your GitHub repository.
+
+***Breakdown list:***
 1. Staging your modifications and creating a commit.
 2. Push the changes to your GitHMub repository
 
 ## Milestone 3: Check if the guessed character is in the word
 
-In this milestone, we proceed to create a code capable of checking if the chosen letter by the user is in the word selected randomly by the computer.
+In this significant milestone, we have successfully developed a code to verify whether the user-selected letter exists within the computer-generated word. This accomplishment was realized through the implementation of functions dedicated to validating user input data and facilitating user input requests.
 
 ### Task 1: Iteratively chech if the input is a valid guess
 
-The first task of this milestone consists on create a python file called **milestone_3.py** in which check if the letter selected by the input is a valid guess by using the following proccedure:
+The first task of this milestone involves creating a Python file named **milestone_3.py**. In this file, the initial step is to check whether the letter inputted by the user is a valid guess. Following this, an if-else statement needs to be developed to determine if the character entered by the user is in alphabetical order.
 
+***Breakdown list:***
 1. Create a while loop and set the condition to True.
 2. Ask the user to guess a letter and assign this to a variable called guess.
 3. Check that the guess is a single alphabetical character by using Python's isalpha method to check if the guess is alphabetical.
@@ -187,8 +195,9 @@ while True:
 
 ### Task 2: Check wether the guess is in the word
 
-In this task, we proceeded to introduce in the code the capability of checking if the guess letter guessed by the user is in the randomly selected word by the computer.
+In this particular task, we took the initiative to enhance the code by adding functionality to check if the letter guessed by the user is present in the word selected by the computer. We achieved this by implementing nested *if-else* statements.
 
+***Breakdown list:***
 1. Import the random module.
 2. Create a list that contains words which is assigend to *word_list* variable.
 3. Create a variable called *secret_word* in which we use the *random.choice* method to randomly select a word from *word_list*.
@@ -217,8 +226,9 @@ while True:
 
 ### Task 3: Create functions to run the check
 
-In this task, we proceed to create two functions called **check_guess** and **called_for_input** in which we proceed to check if the guess is the randomly selected word chosen by the coputer and if the character introduced by the user is valid or not.
+In this task, we will be creating two functions named **check_guess** and **called_for_input**. The purpose of these functions is to verify whether the user's guess matches the randomly selected word chosen by the computer and to validate whether the character inputted by the user is indeed valid.
 
+***Breakdown list:***
 1. Define a function called **check_guess**. pass in the guess as a parameter for the function.
 2. Convert the guess into lower case.
 3. Move the code that you wrote to check if the guess is in the word into this function block.
@@ -254,19 +264,21 @@ ask_for_input()
 
 ### Task 4: Update the latest code changes to GitHub
 
-Update your GitHub repository with the latest code changes from your local project.
+To keep your GitHub repository up to date with the most recent code changes from your local project, make sure to push the latest changes from your local repository to your GitHub repository.
 
+***Breakdown list:***
 1. Staging your modifications and creating a commit.
 2. Push the changes to your GitHMub repository
 
 ## Milestone 4: Create the game class
 
-In this milestone, we proceed proceed to use the Object Oriented Programming (OOP) paradigm to develop to complete a Hangman game.
+In this milestone, we will utilize the Object-Oriented Programming (OOP) paradigm to create a fully functional Hangman game. This involves designing and implementing the game using OOP principles, such as creating classes and objects to represent different elements of the game, including the word to be guessed, the player's progress, and game logic.
 
 ### Task 1: Create the class
 
-In this task, we proceed to create another python file callled **milestone_4.py** in which we proceed to create a class called **Hangman** to contain the required proccesss to create a complete Hangman game.
+In this task, we will create a new Python file named **milestone_4.py**. Within this file, I will define a class called **Hangman** to encapsulate all the necessary processes for creating a fully functional Hangman game.
 
+***Breakdown list:***
 1. Create a class called **Hangman**
 2. Create the contruction method (__init__) to initialise the attributes of the class which are **word_list** and **num_lives**
 3. Initialise the attributes:
@@ -292,8 +304,9 @@ class Hangman:
 
 ### Task 2: Create the methods for running the checks
 
-In this task, we willproceed to create a method that will ask the user to guess a letter and another method that will check if the guess is in the word.
+In the upcoming task, we implement two methods within the **Hangman** class in the upcoming task. The first method will prompt the user to input a letter as their guess, while the second method will verify whether the guessed letter is present in the word.
 
+***Breakdown list:***
 1. Define a method called **check_guess** which has *guess* as parameter.
     - Convert the guessed letter to lower case.
     - Create an if statement that checks if the guess is in the word.
@@ -344,8 +357,9 @@ hangman_game.ask_for_input()
 
 ### Task 3: Define what happens if the letter is in the word
 
-In this task, we proceed to extend the **check_guess** method to replace the underscore(s) in the **word_guessed** with the letter guessed by the user.
+In the upcoming task, we will extend the **check_guess** method. The goal is to replace the underscore(s) in the **word_guessed** with the letter guessed by the user, but only if the guessed letter is in the word. This will be done iteratively using an *if-else* statement.
 
+***Breakdown list:***
 1. After the print statement, Create a for-loop that will loop through each letter in the **word**.
 2. Within the for-loop, do the following:
     - Create an if statement that checks if the letter is equal to the guess
@@ -429,8 +443,9 @@ print("Word guessed so far:", hangman_game.word_guessed)
 
 ### Task 4: Define what happens if the letter is not in the word
 
-In this task, we proceed to define what happens if the guess is not in the word you are trying to guess.
+In this particular task, we will define the course of action if the user's guess does not match any part of the word being guessed. This involves expanding the capabilities of the "check_guess" method. In this method, we will handle the deduction of one "life" from the total attempts allowed in the "num_lives" variable, which represents the number of attempts the user has to guess the word chosen by the computer correctly.
 
+***Breakdown list:***
 1. In the **check_guess method**, Create an else statement.
 2. Within the else block:
     - Reduce **num_lives** by 1.
@@ -482,21 +497,22 @@ print("Word guessed so far:", hangman_game.word_guessed)
 
 ### Task 5:  Update the latest code changes to GitHub 
 
-Update your GitHub repository with the latest code changes from your local project.
+To keep your GitHub repository up to date with the most recent code changes from your local project, make sure to push the latest changes from your local repository to your GitHub repository.
 
+***Breakdown list:***
 1. Staging your modifications and creating a commit.
 2. Push the changes to your GitHMub repository
 
 ## Milestone 5: Putting all together
 
-In this milestone, we proceed to introduce make the final adjustments of the code to make it work as expected by the introduction of the logic conditions that will specify the conditons that are required to make the code work.
+In this milestone, we are going to make the final adjustments to the code to ensure that it works as expected. We will introduce logic conditions that specify the required conditions for the code to function correctly.
 
 ### Task 1: Code the logic of the game
 
-In this task, we proceed to create a script capable to execute the Hangman game as expected. To do it, we decided to create another file called **milestone_5py** 
-in whcih we copy the **Hangman** class created in the **milestone_4.py** file and we proceed to create an additional function that will make the game works as usual.
+In our current task, we are focused on developing a script that can effectively run the Hangman game. We have created a new file named **milestone_5.py** to accomplish this. Within this file, we have transferred the **Hangman** class from the **milestone_4.py** file. Furthermore, we are actively working on implementing an additional function to ensure the proper functionality of the game.
 
-1. Create a function called **play_game** that takes *word_list* as a parameter.
+***Breakdown list:***
+1. Create a function outisde of the **Hangman** class called **play_game** that takes *word_list* as a parameter.
 2. Specify the **num_lives** as 5.
 3. Create a variable called **game** that will called an instance of the **Hangman** class which has **word_list** and **num_lives** as arguments.
 4. Create a while loop and set the condition to True. In the body of the loop, do the following:
@@ -616,8 +632,10 @@ if __name__ == '__main__':  # Execute the code by calling play_game function onl
 
 ### Task 2: Update the latest code changes to GitHub
 
-Update your GitHub repository with the latest code changes from your local project.
 
+To keep your GitHub repository up to date with the most recent code changes from your local project, make sure to push the latest changes from your local repository to your GitHub repository.
+
+***Breakdown list:***
 1. Staging your modifications and creating a commit.
 2. Push the changes to your GitHMub repository
 
