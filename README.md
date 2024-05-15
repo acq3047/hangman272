@@ -1,5 +1,7 @@
 # Hangman
 
+![Image]("C:/Users/acq30/OneDrive/Documents/AI Core VsCode/hangman image.jpeg")
+
 # Table of contents
 1. [Description](#description)
 2. [Milestone 1](#milestone-1-set-up-the-environemnt)
