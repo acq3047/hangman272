@@ -102,6 +102,6 @@ def play_game(word_list):
             
 # Testing the code
 
-if __name__ == '__main__':
-    word_list = ['apple', 'banana', 'orange', 'pear', 'strawberry', 'watermelon']
-    play_game(word_list)
+if __name__ == '__main__':  # Execute the code by calling play_game function only when we run this file directly
+    word_list_game = ['apple', 'banana', 'orange', 'pear', 'strawberry', 'watermelon', 'pinapple', 'peach', 'melon']
+    play_game(word_list_game)
