@@ -11,6 +11,13 @@ word_list = ["apple", "banana", "orange", "strawberry", "mango"]
 secret_word = random.choice(word_list)
 
 def check_guess(guess):
+    '''
+    This function is used to check if the letter provided by the user is in the word chosen by the computer.
+
+    The purpose of this function is to check if the word provided by the user is in the word randomly selected by the computer.
+    In the case the guess is in the word the letter, the code will print on the terminal that was a good guess.
+    However, in the case the letter is not in the word, the code will print on the terminal that it was not a good guess.
+    '''
     # Convert the guess into lower case
     guess = guess.lower()
     
@@ -22,6 +29,13 @@ def check_guess(guess):
 
 
 def ask_for_input():
+    '''
+    This function is used to check if the letter provided by the user is in the alphabetical order and only has one character.
+
+    The puprpose of this function is to check if the letter provided by the user is suitable for the parameters of the game.
+    This parameters are based in if the letter provided is in the alphabetical order and if the input is a single character.
+    To do it, we develop an 'if-else' were the input guess needs to follow the parameters specified above.
+    '''
     guess = None
     while True:
         # Introduce the guess character
