@@ -33,7 +33,7 @@ def ask_for_input():
     This function is used to check if the letter provided by the user is in the alphabetical order and only has one character.
 
     The puprpose of this function is to check if the letter provided by the user is suitable for the parameters of the game.
-    This parameters are based in if the letter provided is in the alphabetical order and if the input is a single character.
+    These parameters are based in if the letter provided is in the alphabetical order and if the input is a single character.
     To do it, we develop an 'if-else' were the input guess needs to follow the parameters specified above.
     '''
     guess = None
