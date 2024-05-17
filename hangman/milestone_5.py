@@ -28,6 +28,8 @@ class Hangman:
         '''
         This method is used to check if the letter provided by the user is in the word chosen by the computer.
 
+        The purpose of this metod is to check if the word provided by the user is in the word randomly
+        selected by the computer by the developent of an 'if-else' statement.
         In the case the guess is in the word the letter is introduce in the word_guessed list in the same position
         as the position that appear in the word.
 
@@ -54,6 +56,9 @@ class Hangman:
         This method is used to ask the user to introduce a letter along with the checking if the guess of the user is an
         alphabetical character and if the user has not introduce more than one character.
 
+        The puprpose of this method is to check if the letter provided by the user is suitable for the parameters of the game.
+        These parameters are based in if the letter provided is in the alphabetical order and if the input is a single character by
+        the develpment of an 'if-else' were the input guess needs to follow the parameters specified above.
         In the case the letter has passed the check, we introduced into the list_of_guesses in which we store all the letters that the
         user has guessed in which there is no repetitive letters.
 
