@@ -5,6 +5,7 @@
 # Table of contents
 1. [Description](#description)
 2. [Milestone 1: Set up the environment](#milestone-1-set-up-the-environemnt)
+    - [Usage instructions](#usage-instructions)
 3. [Milestone 2: Create the variables for the game](#milestone-2-create-the-variables-for-the-game)
     - [Task 1: Define the list of possible words](#task-1-define-the-list-of-possible-words)
     - [Task 2: Choose a random word from the list](#task-2-choose-a-random-word-from-the-list)
@@ -56,6 +57,13 @@ At the time of creating the repository, we decided to follow the following procc
 ```python
 git clone https://github.com/acq3047/hangman272.git
 ```
+### Usage instructions
+In this section, we will outline the necessary instructions for running the hangman game, focusing on the specific version of Python required in this project.
+
+***Python version***
+- Python version: Python 3.7 or higher
+
+In this project, we won't need any extra configuration. During the development phase, we utilized Python's built-in **random** module, eliminating the need for a separate installation.
 
 ## Milestone 2: Create the variables for the game
 
